@@ -6,7 +6,6 @@ export default function ReviewRoutes(app) {
     const reviews = await usersDao.getAllReviews();
     res.json(reviews);
   };
-  //TODO: duplication
   const getAllReviewsForApiRecipe = async (req, res) => {
     const { recipeId } = req.params;
     const reviews = await usersDao.getAllReviewsForApiRecipe(recipeId);

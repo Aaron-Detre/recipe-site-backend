@@ -12,8 +12,6 @@ const reviewSchema = new mongoose.Schema(
   { collection: "reviews" }
 );
 
-//TODO: TEST THAT THIS VALIDATION ACTUALLY WORKS
-
 // Based off this -> https://stackoverflow.com/questions/71128914/how-to-make-sure-that-only-one-of-two-fields-are-populated-in-mongodb
 reviewSchema.pre("validate", function (next) {
   if (

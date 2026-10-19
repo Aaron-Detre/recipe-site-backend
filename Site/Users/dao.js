@@ -78,7 +78,6 @@ export default function UsersDao() {
     return allReviews.filter((review) => review.localRecipeId === recipeId);
   };
 
-  //TODO: big duplication
   const addUserReviewsToArray = (reviewArray, userWithReviews) => {
     (userWithReviews.reviews ?? []).forEach((review) =>
       reviewArray.push({
@@ -217,7 +216,6 @@ export default function UsersDao() {
   };
   const deleteRecipe = async (recipeId) => {
     // updateMany because not sure who authored the recipe, but there should be only one with that id
-    console.log("HERE");
     return model.updateMany(
       { "authored._id": recipeId },
       { $pull: { authored: { _id: recipeId } } }
